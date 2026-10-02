@@ -1,5 +1,5 @@
 /* Время намаза — service worker. При обновлении сайта увеличьте VERSION. */
-const VERSION = 'namaz2-v31';
+const VERSION = 'namaz2-v35';
 const FONTS = 'namaz-fonts-v1';
 const SHELL = ['./', './index.html', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
