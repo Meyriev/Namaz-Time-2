@@ -1,5 +1,5 @@
 /* Время намаза — service worker. При обновлении сайта увеличьте VERSION. */
-const VERSION = 'namaz2-v35';
+const VERSION = 'namaz2-v54';
 const FONTS = 'namaz-fonts-v1';
 const SHELL = ['./', './index.html', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/apple-touch-icon.png'];
@@ -29,6 +29,8 @@ self.addEventListener('fetch', e => {
     return;
   }
   if (url.origin !== location.origin) return;
+  // Записи азкаров отдаёт сеть напрямую: аудио запрашивается частями
+  if (url.pathname.includes('/audio/')) return;
 
   // Страница: сначала сеть, без сети — из кэша
   if (req.mode === 'navigate') {
